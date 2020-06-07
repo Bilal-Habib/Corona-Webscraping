@@ -16,3 +16,5 @@ class PostsSpider(scrapy.Spider):
                 'Recovered' : row.xpath('td[3]//text()').extract_first(),
                 'Deaths' : row.xpath('td[4]//text()').extract_first(),
             }
+
+    

@@ -1,0 +1,16 @@
+[
+{"Location": "Worldwide", "Confirmed": "6,194,533", "Cases per 1 million people": "797", "Recovered": "\u2014", "Deaths": "376,320"},
+{"Location": "United Kingdom", "Confirmed": "277,985", "Cases per 1 million people": "4,184", "Recovered": "\u2014", "Deaths": "39,369"},
+{"Location": "England", "Confirmed": "149,802", "Cases per 1 million people": "2,826", "Recovered": "\u2014", "Deaths": "29,673"},
+{"Location": "Greater London", "Confirmed": "18,000", "Cases per 1 million people": "2,108", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Scotland", "Confirmed": "13,929", "Cases per 1 million people": "2,630", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Wales", "Confirmed": "11,706", "Cases per 1 million people": "3,821", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Midlands", "Confirmed": "11,368", "Cases per 1 million people": "1,122", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "North West", "Confirmed": "10,027", "Cases per 1 million people": "1,422", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "North East and Yorkshire", "Confirmed": "9,059", "Cases per 1 million people": "\u2014", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "South East England", "Confirmed": "8,517", "Cases per 1 million people": "969", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "East of England", "Confirmed": "6,002", "Cases per 1 million people": "1,027", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "South West England", "Confirmed": "3,392", "Cases per 1 million people": "635", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Northern Ireland", "Confirmed": "1,911", "Cases per 1 million people": "1,055", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Akrotiri and Dhekelia", "Confirmed": "11", "Cases per 1 million people": "\u2014", "Recovered": "0", "Deaths": "0"}
+]
