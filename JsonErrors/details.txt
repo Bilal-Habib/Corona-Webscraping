@@ -1,0 +1,80 @@
+HTML code for json table:
+
+<body onLoad="buildHtmlTable('#CovidTable')">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="MainCoronaTable.js"></script>
+    <table id="CovidTable" border="1"></table>
+</body>
+
+JS code for json table:
+
+"use strict";
+
+var myList = [
+{"Location": "Worldwide", "Confirmed": "6,194,533", "Cases per 1 million people": "797", "Recovered": "\u2014", "Deaths": "376,320"},
+{"Location": "United Kingdom", "Confirmed": "277,985", "Cases per 1 million people": "4,184", "Recovered": "\u2014", "Deaths": "39,369"},
+{"Location": "England", "Confirmed": "149,802", "Cases per 1 million people": "2,826", "Recovered": "\u2014", "Deaths": "29,673"},
+{"Location": "Greater London", "Confirmed": "18,000", "Cases per 1 million people": "2,108", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Scotland", "Confirmed": "13,929", "Cases per 1 million people": "2,630", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Wales", "Confirmed": "11,706", "Cases per 1 million people": "3,821", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Midlands", "Confirmed": "11,368", "Cases per 1 million people": "1,122", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "North West", "Confirmed": "10,027", "Cases per 1 million people": "1,422", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "North East and Yorkshire", "Confirmed": "9,059", "Cases per 1 million people": "\u2014", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "South East England", "Confirmed": "8,517", "Cases per 1 million people": "969", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "East of England", "Confirmed": "6,002", "Cases per 1 million people": "1,027", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "South West England", "Confirmed": "3,392", "Cases per 1 million people": "635", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Northern Ireland", "Confirmed": "1,911", "Cases per 1 million people": "1,055", "Recovered": "\u2014", "Deaths": "\u2014"},
+{"Location": "Akrotiri and Dhekelia", "Confirmed": "11", "Cases per 1 million people": "\u2014", "Recovered": "0", "Deaths": "0"}
+];
+
+// var myList = [];
+// fetch("jsontable.json")
+//     .then(function (resp) {
+//         return resp.json();
+//     })
+//     .then(function (data) {
+//         myList = data;
+//     });
+
+// function helloCatAsync() {
+//     setTimeout(function () {
+//     }, Math.random() * 2000);
+// }
+
+alert(myList.length);
+
+// Builds the HTML Table out of myList.
+function buildHtmlTable(selector) {
+    var columns = addAllColumnHeaders(myList, selector);
+
+    for (var i = 0; i < myList.length; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+            var cellValue = myList[i][columns[colIndex]];
+            if (cellValue == null) cellValue = "";
+            row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+    }
+}
+
+// Adds a header row to the table and returns the set of columns.
+// Need to do union of keys from all records as some records may not contain
+// all records.
+function addAllColumnHeaders(myList, selector) {
+    var columnSet = [];
+    var headerTr$ = $('<tr/>');
+
+    for (var i = 0; i < myList.length; i++) {
+        var rowHash = myList[i];
+        for (var key in rowHash) {
+            if ($.inArray(key, columnSet) == -1) {
+                columnSet.push(key);
+                headerTr$.append($('<th/>').html(key));
+            }
+        }
+    }
+    $(selector).append(headerTr$);
+
+    return columnSet;
+}
